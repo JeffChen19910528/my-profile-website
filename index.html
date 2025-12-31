@@ -2,30 +2,103 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>Jeff Chen｜個人形象網站</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jeff Chen ｜ 軟體工程師 · 專案作品集</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Jeff Chen</h1>
-    <p>.NET Engineer / Backend Developer</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Jeff Chen</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Jeff Chen</h1>
+        <p class="lead">後端/系統工程師 · .NET / 架構 / 區塊鏈</p>
+        <p class="cta-row">
+          <a class="btn primary" href="#projects">查看作品</a>
+          <a class="btn outline" href="mailto:qaz861253@gmail.com">聯絡我</a>
+        </p>
+      </div>
+      <div class="hero-card">
+        <img src="image/profile.jpg" alt="Jeff Chen" onerror="this.style.display='none'" />
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>關於我</h2>
-    <p>
-      我是一名後端工程師，專注於 .NET、系統架構與區塊鏈相關研究。
-    </p>
-  </section>
+  <main>
+    <section id="about" class="section container">
+      <h2 class="section-title">關於我</h2>
+      <p class="muted">我是專注於後端與系統設計的工程師，擅長 .NET、生產環境架構與分散式系統。熱衷把研究轉化成可運維、可擴充的產品。</p>
+    </section>
 
-  <section>
-    <h2>聯絡方式</h2>
-    <ul>
-      <li>Email: qaz861253@gmail.com</li>
-      <li>GitHub: https://github.com/JeffChen19910528</li>
-    </ul>
-  </section>
+    <section id="skills" class="section container">
+      <h2 class="section-title">技能 & 工具</h2>
+      <ul class="skills-grid">
+        <li>.NET / C#</li>
+        <li>AI Agents / LLM integration</li>
+        <li>SQL</li>
+        <li>CI/CD / GitHub Actions</li>
+        <li>Cloud (Azure)</li>
+        <li>Blockchain Fundamentals</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2 class="section-title">專案作品</h2>
+      <p class="muted">以下為精選專案，點擊可查看細節與原始碼。</p>
+
+      <div class="projects-grid" id="projects-grid">
+        <article class="project-card" data-title="監控系統" data-desc="以 .NET建置監控。" data-tech="C#, .NET, Redis" data-links='{"code":"https://github.com/JeffChen19910528/TestRedis","demo":""}'>
+          <h3>監控系統</h3>
+          <p class="project-lead">可靠的監控服務（後端）</p>
+        </article>
+
+        <article class="project-card" data-title="區塊鏈整合" data-desc="研究型專案：整合智能合約與垮鏈。" data-tech="Solidity, Web3" data-links='{"code":"https://github.com/JeffChen19910528/Cross-Chain-Bridge","demo":""}'>
+          <h3>區塊鏈整合</h3>
+          <p class="project-lead">智能合約與跨鏈流程示範</p>
+        </article>
+
+        <article class="project-card" data-title="AI數據分析" data-desc="研究AI模型進行數據分析" data-tech="Python" data-links='{"code":"https://github.com/JeffChen19910528/AIModel","demo":""}'>
+          <h3>AI數據分析</h3>
+          <p class="project-lead">使用AI Model進行動物辨識</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2 class="section-title">聯絡方式</h2>
+      <ul>
+        <li>Email: <a href="mailto:qaz861253@gmail.com">qaz861253@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/JeffChen19910528" target="_blank">github.com/JeffChen19910528</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Jeff Chen — 專注於可運維的系統設計</div>
+  </footer>
+
+  <!-- Project modal -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="close">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <p><strong>技術：</strong><span id="modal-tech"></span></p>
+      <p><a id="modal-code" href="#" target="_blank">原始碼</a></p>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
